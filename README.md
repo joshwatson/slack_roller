@@ -9,6 +9,7 @@ Dice rolling bot for Slack, using Amazon API Gateway and Lambda microservices
 4. The handler is "slack_roller.roll"
 5. Set role as "Basic Execution Role" and allow it when it pops up
 6. Click through the "create function" stuff
+
 ## API
 1. Create a new API in Amazon API Gateway
 2. Create a new method
@@ -23,6 +24,7 @@ Dice rolling bot for Slack, using Amazon API Gateway and Lambda microservices
  }
 9. Save that
 10. Click "Deploy API"; this should provide you with a url.
+
 ## Slack
 1. Add a slash command to your integrations
 2. Fill in the information it asks for the command you want
