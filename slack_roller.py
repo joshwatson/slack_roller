@@ -122,7 +122,7 @@ def roll(event, context):
     # which contains our string
     if roll_cmd is None:
         roll_cmd = '1d20'
-    elif roll_cmd == 'help':
+    elif roll_cmd == ['help']:
         return {'text': help_msg}
     else:
         roll_cmd = roll_cmd[0]
