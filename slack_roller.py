@@ -7,6 +7,15 @@ import urlparse
 
 from copy import copy
 
+help_msg = '''rollbot usage
+/roll <count>d<sides>[dl<drop_low>][dh<drop_high>][r<reroll>][modifier]
+
+ex: 
+/roll 2d20dh1 -> rolls 2d20, drops the highest 1
+/roll 4d6dl1 -> rolls 4d6, drops the lowest 1
+/roll 2d6r2 -> rolls 2d6, rerolling 1s and 2s
+'''
+
 def parse_roll_cmd(roll_cmd):
     '''
     Parses the roll command
@@ -113,6 +122,8 @@ def roll(event, context):
     # which contains our string
     if roll_cmd is None:
         roll_cmd = '1d20'
+    elif roll_cmd == 'help':
+        return {'text': help_msg}
     else:
         roll_cmd = roll_cmd[0]
     
