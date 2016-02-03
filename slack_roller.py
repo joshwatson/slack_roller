@@ -58,7 +58,7 @@ def roll_dice(parsed_roll):
     try:
     
         for i in range(count):
-            rolls.append(random.randint(1, sides))
+            rolls.append(random.SystemRandom().randint(1, sides))
     
         full_results = repr(rolls)
     
@@ -69,7 +69,7 @@ def roll_dice(parsed_roll):
         if reroll:
             for i,x in enumerate(rolls):
                 if x <= reroll:
-                    rolls[i] = random.randint(1, sides)
+                    rolls[i] = random.SystemRandom().randint(1, sides)
                     
             full_results += '\n=> {!r}'.format(rolls)
         
